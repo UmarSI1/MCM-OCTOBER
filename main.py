@@ -425,7 +425,7 @@ def main():
     # Create an Altair chart
     chart_three = alt.Chart(df_long).mark_line().encode(
         x='Dates',
-        y='MODERATION TIME (MINS)',
+        y='MODERATION TIME (HRS)',
         color=alt.Color('Type', scale=alt.Scale(domain=['Automated', 'Manual'], range=['red', 'green'])),
         strokeDash='Type').properties(
         title='ACC VS Manual Moderation Time (Detection + Decision Periods)')
