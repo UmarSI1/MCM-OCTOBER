@@ -912,7 +912,8 @@ def main():
             with st.expander("Total ACC detections per content type", expanded=False):
                 st.dataframe(fig5, use_container_width=True)
         with col2:
-            st.dataframe(fig1, use_container_width=True)
+            with st.expander("Total ACC detections per company", expanded=False):
+                st.dataframe(fig1, use_container_width=True)
         with col1:
             with st.expander("Total ACC detections per harm", expanded=False):
                 st.dataframe(fig2, use_container_width=True)
