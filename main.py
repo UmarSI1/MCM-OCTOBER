@@ -421,14 +421,14 @@ def main():
 
 
     # Melt the dataframe to a long format for Altair
-    df_long = df_three.melt('Dates', var_name='Type', value_name='MODERATION TIME (MINS)')
+    df_long = df_three.melt('Dates', var_name='Type', value_name='MODERATION TIME (HRS)')
     # Create an Altair chart
     chart_three = alt.Chart(df_long).mark_line().encode(
         x='Dates',
         y='MODERATION TIME (MINS)',
         color=alt.Color('Type', scale=alt.Scale(domain=['Automated', 'Manual'], range=['red', 'green'])),
         strokeDash='Type').properties(
-        title='ACC VS Manual Moderation Time')
+        title='ACC VS Manual Moderation Time (Detection + Decision Periods)')
 
 
     # ####################################################
@@ -455,7 +455,7 @@ def main():
     # Create an Altair bar chart
     chart_four = alt.Chart(df_xx).mark_bar().encode(
         x=alt.X('Category:N', title=''),
-        y=alt.Y('Total Harm Count:Q', title='AVERAGE  MODERATION TIME (MINS)'),
+        y=alt.Y('Total Harm Count:Q', title='AVERAGE  MODERATION TIME (HRS)'),
         color=alt.Color('Category:N', scale=color_scale, legend=None)).properties(width=alt.Step(80))
 
 
@@ -490,8 +490,8 @@ def main():
             formatted_number1 = format(int(acc_total4), ",")
             formatted_number2 = format(int(user_total4), ",")
             st.write(
-                f"<span style='color:red; font-weight:bold;'>Automated Average Time</span>: {formatted_number1} Mins "
-                f"<span style='color:green; font-weight:bold;'>Manual Average Time</span>: {formatted_number2} Mins ",
+                f"<span style='color:red; font-weight:bold;'>Automated Average Time</span>: {formatted_number1} Hrs "
+                f"<span style='color:green; font-weight:bold;'>Manual Average Time</span>: {formatted_number2} Hrs ",
                 unsafe_allow_html=True)
             st.altair_chart(chart_four, use_container_width=True)
     st.markdown("---")
@@ -960,10 +960,8 @@ def main():
         with col1:
             with st.expander("Count of moderation decision per automation status for harm", expanded=False):
                 st.dataframe(fig19, use_container_width=True)
-            
-
     else:
-        st.write("No dataset selected.")
+        st.write("Please select one of the options above.")
     ########################################################################################################
 
 ########################################################################################################
