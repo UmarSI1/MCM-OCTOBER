@@ -47,7 +47,7 @@ def load_config(file_path):
 
 #############################################
 #Listing specific companies and harms we want
-list_of_companies = ['TikTok', 'Pinterest', 'Snapchat', 'LinkedIn', 'X', 'Facebook', 'Instagram','YouTube','Reddit','Bumble']    
+list_of_companies = ['TikTok', 'Pinterest', 'Snapchat', 'LinkedIn', 'X', 'Facebook', 'Instagram','YouTube','Reddit','Bumble','Threads','WhatsApp Channels','Pornhub','Stripchat']    
 list_of_harms = ['STATEMENT_CATEGORY_ILLEGAL_OR_HARMFUL_SPEECH', 'STATEMENT_CATEGORY_SCOPE_OF_PLATFORM_SERVICE', 'STATEMENT_CATEGORY_PROTECTION_OF_MINORS', 'STATEMENT_CATEGORY_VIOLENCE', 'STATEMENT_CATEGORY_PORNOGRAPHY_OR_SEXUALIZED_CONTENT', 
                         'STATEMENT_CATEGORY_DATA_PROTECTION_AND_PRIVACY_VIOLATIONS', 'STATEMENT_CATEGORY_SCAMS_AND_FRAUD', 'STATEMENT_CATEGORY_SELF_HARM', 
                         'STATEMENT_CATEGORY_NEGATIVE_EFFECTS_ON_CIVIC_DISCOURSE_OR_ELECTIONS', 'STATEMENT_CATEGORY_INTELLECTUAL_PROPERTY_INFRINGEMENTS', 
