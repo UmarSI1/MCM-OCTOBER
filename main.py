@@ -407,8 +407,8 @@ def main():
     #GRAPH #3
     df_three = pd.DataFrame({
         'Dates': all_dates_between_initial_final_dates,
-        'Automated': [result[0] for result in results2],
-        'Manual': [result[1] for result in results2]
+        'Automated': [result[0] / 60 for result in results2],
+        'Manual': [result[1] / 60 for result in results2]
     })
 
     # Ensure there are no division by zero errors
