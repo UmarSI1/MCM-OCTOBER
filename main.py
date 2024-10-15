@@ -501,6 +501,15 @@ def main():
 
     with col2:
             # Display the chart
+        if acc_total4 > 24:
+            formatted_number1 = format(int(acc_total4/24), ",")
+            formatted_number2 = format(int(user_total4/24), ",")
+            st.write(
+                f"<span style='color:red; font-weight:bold;'>Automated Average Time</span>: {formatted_number1} Days "
+                f"<span style='color:green; font-weight:bold;'>Manual Average Time</span>: {formatted_number2} Days ",
+                unsafe_allow_html=True)
+            st.altair_chart(chart_four, use_container_width=True)
+        else:
             formatted_number1 = format(int(acc_total4), ",")
             formatted_number2 = format(int(user_total4), ",")
             st.write(
@@ -508,6 +517,7 @@ def main():
                 f"<span style='color:green; font-weight:bold;'>Manual Average Time</span>: {formatted_number2} Hrs ",
                 unsafe_allow_html=True)
             st.altair_chart(chart_four, use_container_width=True)
+            
     st.markdown("---")
     ####################################################
     
