@@ -148,20 +148,20 @@ def process_automation_status(automation_status):
 def plot_acc_totals_per_harm_company_harm_historical(data, company_selected, harm_selected):
     """ Sum all numbers for acc per harm and return the results. """
     
-    # acc_totals_per_harm =  data[company_selected][harm_selected]['Yes']
-    # manual_totals_per_harm = data[company_selected][harm_selected]['No']
+    acc_totals_per_harm =  data[company_selected][harm_selected]['Yes']
+    manual_totals_per_harm = data[company_selected][harm_selected]['No']
 
-    try:
-        acc_totals_per_harm = data[company_selected][harm_selected]['Yes']
-        manual_totals_per_harm = data[company_selected][harm_selected]['No']
-    except KeyError as e:
-        print(f"KeyError: {e} - One of the keys does not exist in the dictionary.")
-        pass
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        pass
+    # try:
+    #     acc_totals_per_harm = data[company_selected][harm_selected]['Yes']
+    #     manual_totals_per_harm = data[company_selected][harm_selected]['No']
+    # except KeyError as e:
+    #     print(f"KeyError: {e} - One of the keys does not exist in the dictionary.")
+    #     pass
+    # except Exception as e:
+    #     print(f"An error occurred: {e}")
+    #     pass
 
-    return acc_totals_per_harm, manual_totals_per_harm
+    # return acc_totals_per_harm, manual_totals_per_harm
 ########################################
 def process_data_excel(data, dataset1, dataset2):
 
