@@ -148,8 +148,20 @@ def process_automation_status(automation_status):
 def plot_acc_totals_per_harm_company_harm_historical(data, company_selected, harm_selected):
     """ Sum all numbers for acc per harm and return the results. """
     
-    acc_totals_per_harm =  data[company_selected][harm_selected]['Yes']
-    manual_totals_per_harm = data[company_selected][harm_selected]['No']
+    # acc_totals_per_harm =  data[company_selected][harm_selected]['Yes']
+    # manual_totals_per_harm = data[company_selected][harm_selected]['No']
+    
+    if company_selected not in data:
+        acc_totals_per_harm =  0
+        manual_totals_per_harm = 0
+    else:
+        if harm_selected not in data[company_selected]:
+            acc_totals_per_harm =  0
+            manual_totals_per_harm = 0
+        else:
+            acc_totals_per_harm =  data[company_selected][harm_selected]['Yes']
+            manual_totals_per_harm = data[company_selected][harm_selected]['No']
+            
     
     return acc_totals_per_harm, manual_totals_per_harm
     
